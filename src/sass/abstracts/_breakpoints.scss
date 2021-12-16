@@ -1,0 +1,20 @@
+$breakpoints: (small: 35em,
+  medium: 50em,
+  large: 1366px);
+
+// main sizes map
+$sizes: (sm: (cn: 750px, bp: 768px),
+  md: (cn: 855px, bp: 856px),
+  lg: (cn: 1170px, bp: 1200px));
+
+// return any size
+@function size($which, $type) {
+  @return map-get(map-get($sizes, $which), $type);
+}
+
+// include any content for breakpoint by size name
+@mixin bp($size) {
+  @media(min-width: size($size, bp)) {
+    @content
+  }
+}

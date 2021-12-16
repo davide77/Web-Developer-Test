@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.button {
+  display: inline-block;
+  border: 0; 
+  --font-weight: 500;
+  font-size: var(--fs-300);
+  color: rgba(white, 0.87);
+  background-color: #448aff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.33px;
+  line-height: 1;
+  padding: .95em 1.75em .85em;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 .125em .5em rgba(black, .15);
+  transform: scale(1);
+  transition: transform 200ms ease;
+  &.icon{
+    
+  }
+ 
+  &:hover,
+  &:focus {
+    transform: scale(1.05) translateY(-.125em);
+    color: var(--clr-neutral-100);
+
+    &::before {
+      opacity: .3;
+    }
+  }
+
+  &[data-reverse="true"] {
+     background-color: var(--clr-neutral-100);
+     color: var(--clr, var(--clr-primary-400));
+  }
+}

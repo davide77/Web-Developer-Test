@@ -1,0 +1,253 @@
+@use '../abstracts/'as *;
+ 
+.checkout-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    margin: auto;
+    max-width: 647px;
+    width: 100%;
+    padding-inline: 18px;
+    @include bp(lg) {
+        padding-inline: 0px;
+    }
+
+    header {
+        padding-block: 2rem;
+        p{
+            color: rgba(black, 0.87);
+            font-size: 14px;
+            --font-weight: 200; 
+            line-height: 1.71;
+            letter-spacing: 0.08px;
+        }
+    }
+
+    .cart {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+
+        .item {
+            color: rgba(black, 0.87);
+            font-size: 14px;
+            --font-weight: 200;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.71;
+            letter-spacing: 0.08px;
+            padding-block-end:1.2rem;
+            
+            &.head {
+                --font-weight: 500;
+                border-bottom: 2px solid #efefef;
+                margin-bottom: 1rem;
+            }
+ 
+            .list-container {
+                margin-bottom: 1rem;
+            }
+    
+            label {
+                justify-self: left;
+            }
+    
+            .product {
+                grid-column: 1 / 2;
+                border-bottom: rgba(black, 0.87);
+                border-width: 1px;
+                margin: 8px 0px;
+                border-bottom-style:solid;
+                @include bp(md) {
+                    border-width:0;
+                }
+            }
+            
+    
+            .total-container {
+                margin: inherit;
+                flex-direction: column;
+            }
+
+            .product {
+                justify-self: left;
+            }
+
+            .quantity-container { 
+                background-color: white;
+                justify-content: center;
+                align-items: center;
+                border-style: solid;
+                border-color: #448aff;
+                border-width: thin;
+                border-radius: 3px;
+                display: grid;
+                gap: 0.2rem;
+                grid-template-areas: "dec input inc";
+                width: auto;
+
+
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+
+
+                .input {
+                    -moz-appearance: textfield;
+                    font-size: inherit;
+                    grid-area: input;
+                    height: 100%;
+                    padding: 0;
+                    text-align: center;
+                    border: none;
+                    background-color: Transparent;
+                    outline: none;
+                    width: 100%;
+                    max-width: 30px;
+                    font-size: 14px;
+                    --font-weight: 200;
+                }
+
+                button {
+                    align-content: center;
+                    background: none;
+                    color: #448aff;
+                    display: grid;
+                    justify-content: center;
+                    height: 100%;
+                    line-height: 100%;
+                    border: 0;
+                }
+
+                button[data-type="increase"] {
+                    grid-area: inc;
+                }
+
+                button[data-type="decrease"] {
+                    grid-area: dec;
+                }
+
+            }
+
+            .delete-item {
+                border: 0;
+                background: none;
+                cursor: pointer;
+            }
+        }
+        .grid {
+            display: grid;
+            gap: $grid-gap; 
+            justify-items: center;
+            grid-template-columns: 2.8fr 0fr;
+
+            @include bp(md) {
+                grid-template-areas: "label . . cost . ";
+                grid-template-columns: 2.8fr 1fr 1fr 1fr 40px;
+                padding-block-end: 1.2rem;
+                justify-content: stretch;
+            }
+        }
+
+        .total-container {
+            margin-block-start: 2rem;
+            color: rgba(black, 0.87);
+            font-size: 14px;
+            --font-weight: 200;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.71;
+            letter-spacing: 0.08px;
+            margin-bottom:1rem;
+
+            .grid { 
+                justify-items: center;
+                grid-template-columns: 2.8fr 0fr;
+
+                @include bp(md) {
+                    grid-template-areas: "label . . cost . ";
+                    grid-template-columns: 2.8fr 1fr 1fr 1fr 40px;
+                    padding-block-end: 1.2rem;
+                    justify-content: stretch;
+                    .cost {
+                        grid-area: cost;
+
+                        &.total {
+                            --font-weight: 500;
+                        }
+                    }
+
+                    .label {
+                        justify-self: left;
+                        grid-area: label;
+
+                        &.total {
+                            --font-weight: 500;
+                        }
+                    }
+                }
+
+
+                .cost {
+
+                    &.total {
+                        --font-weight: 500;
+                    }
+                }
+
+                .label {
+                    justify-self: left;  
+                    &.total {
+                        --font-weight: 500;
+                    }
+                }
+            }
+        }
+ 
+        .cta-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .buynow {
+            align-self: flex-end;
+            grid-area: cost;
+            display: block;
+            justify-self: right;
+
+            .inactive {
+                background-color: gray;
+            }
+        }
+    }
+    .buynow {
+        align-self: flex-end;
+        margin: 2em 10px;
+    }
+}
+ 
+
+@include bp(md) {
+
+    //desktop
+    .checkout-section {
+         
+
+        .buynow {
+            margin: 30px 60px;
+        }
+
+        .cart {
+            .cost {
+                justify-self: right;
+            }
+
+              
+        }
+    }
+}
+ 

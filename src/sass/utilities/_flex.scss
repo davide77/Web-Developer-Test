@@ -1,0 +1,75 @@
+%flex {
+  display: flex;
+  gap: var(--gap, var(--spacer));
+}
+
+%grid {
+  display: grid;
+  gap: var(--gap, var(--spacer));
+}
+
+@mixin flex($align: start, $justify: between) {
+  @extend %flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+.flex{
+  display: flex;
+}
+ 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+//Justify
+.is-justify-start {
+  justify-content: flex-start !important;
+}
+
+.is-justify-end {
+  justify-content: flex-end !important;
+}
+
+.is-justify-around {
+  justify-content: space-around !important;
+}
+
+.is-justify-between {
+  justify-content: space-between !important;
+}
+
+.is-justify-center {
+  justify-content: center !important;
+}
+
+//Align
+
+.is-align-start {
+  align-items: flex-start !important;
+}
+
+.is-align-end {
+  align-items: flex-end !important;
+}
+
+.is-align-around {
+  align-items: space-around !important;
+}
+
+.is-align-between {
+  align-items: space-between !important;
+}
+
+.is-align-center {
+  align-items: center !important;
+}
+
+.is-flex-wrap {
+  flex-wrap: wrap !important;
+}

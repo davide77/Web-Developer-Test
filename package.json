@@ -1,0 +1,59 @@
+{
+  "name": "erin-joost-web-developer-test",
+  "version": "0.0.1",
+  "description": "A sample application for demonstrating web development skills",
+  "engines": {
+    "node": ">=10.15.3"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "npx webpack --watch",
+    "dev": "npx webpack serve --open",
+    "start": "node ./server.js",
+    "build": "npx webpack",
+    "zip_lambda": "./scripts/zip_lambda.sh"
+  },
+  "repository": "git+https://github.com/davide77/Web-Developer-Test.git",
+  "keywords": [
+    "webdev",
+    "test"
+  ],
+  "author": "Various",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Crazy-Alpaca/Web-Developer-Test/issues"
+  },
+  "homepage": "https://github.com/davide77/Web-Developer-Test#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^7.0.0",
+    "css-loader": "^5.0.2",
+    "express": "^4.17.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.2.0",
+    "node-sass": "^4.14.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-hot-loader": "^4.13.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "sass": "^1.32.7",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.848.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "import-glob-loader": "^1.1.0",
+    "react-responsive-image": "^5.0.0",
+    "uuid": "^8.3.2"
+  }
+}

@@ -1,0 +1,120 @@
+@use '../abstracts'as *;
+
+$bottom-padding:40px;
+
+footer.footer {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    .container {
+        justify-content: space-between;
+
+        .wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .nav-brand {
+        display: flex;
+        align-items: center;
+        padding-block-end: 1.7rem;
+
+        @include bp(md) {
+            padding-block-end: 0;
+        }
+    }
+
+    .nav {
+        display: inline-flex;
+
+        .nav-items {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .nav-link {
+                padding-block-end: 1.7rem;
+                text-align: left;
+
+                a {
+                    font-size: 12px;
+                    padding: 0;
+                }
+            }
+
+        }
+
+        a {
+            .footer-only {
+                text-indent: 0;
+                position: relative;
+                display: block;
+            }
+
+            .cart-icon {
+                display: none;
+            }
+        }
+
+        .nav-brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-block: 1.2rem;
+
+            @include bp(md) {
+                padding-block: 1.2rem;
+            }
+
+            @include bp(lg) {
+                padding-block: 2.8rem;
+            }
+        }
+    }
+
+    .social-nav {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        @include bp(md) {
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+ 
+
+        a {
+            transition: all 350ms ease-out;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            padding: 0.6rem;
+
+            img {
+                object-fit: contain;
+                opacity: 0.54;
+            }
+
+            &:hover {}
+        }
+        p{
+            font-size: smaller;
+            text-align: left;
+            color: rgba(black, 0.87);
+            font-size: 12px;
+            @include bp(md) {
+                text-align: right;
+            }
+        }
+    }
+
+}

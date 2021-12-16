@@ -1,0 +1,33 @@
+@use '../abstracts/' as *;
+
+ .wrap {
+     width: 100%;
+     max-width: 1366px;
+     margin-left: auto;
+     margin-right: auto;
+     padding-inline: 18px;
+
+
+     @include bp(sm) {
+         padding-inline: 18px;
+     }
+
+     @include bp(md) {
+         padding-inline: 28px;
+     }
+
+     @include bp(lg) {
+         padding-inline: 48px;
+     }
+ }
+
+ // Full Bleed
+ .full-bleed,
+ %full-bleed {
+     width: 100vw;
+     position: relative;
+     left: 50%;
+     right: 50%;
+     margin-left: -50vw;
+     margin-right: -50vw;
+ }
