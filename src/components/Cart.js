@@ -115,10 +115,10 @@ function CartLabels(props) {
     return <li />;
   }
   return (
-    <li className="grid item head">
+    <li className="grid head">
       <div className="product">Product</div>
-      <div>Price</div>
-      <div>Quantity</div>
+      <div className="price">Price</div>
+      <div className="quantity">Quantity</div>
       <div className="cost">Cost</div>
     </li>
   )

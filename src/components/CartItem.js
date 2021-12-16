@@ -44,7 +44,7 @@ class CartItem extends Component{
         const cost = (price(sku) * this.props.quantity).toFixed(2);
         if(!this.props.isMobile){
             return(
-                <li className="item list-container grid">
+                <li className="items list-container grid">
                     <div className="product">{item.name}, {item.size}</div>
                     <div className="price">£{price(this.props.sku)}</div>
                     <div className="quantity-container">     
@@ -53,12 +53,13 @@ class CartItem extends Component{
                         <button data-type="increase" aria-label="increase product number" onClick={this.incrementItemQuantity}>+</button>
                     </div>
                     <div className="cost">£{cost} </div>       
-                    <button aria-label="delete item" className="delete-item" onClick={this.props.removeItem}><img src={Delete} alt="remove item"/></button>
+                    <button aria-label="delete item" className="delete-item" onClick={this.props.removeItem}>
+                        <img src={Delete} alt="remove item"/></button>
                 </li>
             );
         }else{
             return(
-                <li className="item">
+                <li className="items">
                     <div className="product">{item.name}, {item.size}</div>
                     <div className="grid">
                         <label>Price</label>

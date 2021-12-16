@@ -1,5 +1,5 @@
 @use '../abstracts/'as *;
- 
+
 .checkout-section {
     display: flex;
     flex-direction: column;
@@ -9,16 +9,18 @@
     max-width: 647px;
     width: 100%;
     padding-inline: 18px;
+
     @include bp(lg) {
         padding-inline: 0px;
     }
 
     header {
         padding-block: 2rem;
-        p{
+
+        p {
             color: rgba(black, 0.87);
             font-size: 14px;
-            --font-weight: 200; 
+            font-weight: 200;
             line-height: 1.71;
             letter-spacing: 0.08px;
         }
@@ -30,42 +32,53 @@
         margin: 0;
         padding: 0;
 
-        .item {
+        .grid.head {
+            border-bottom: 2px solid #efefef;
+            margin-bottom: 1rem;
             color: rgba(black, 0.87);
             font-size: 14px;
-            --font-weight: 200;
+            font-weight: 700;
             font-stretch: normal;
             font-style: normal;
             line-height: 1.71;
             letter-spacing: 0.08px;
-            padding-block-end:1.2rem;
-            
-            &.head {
-                --font-weight: 500;
-                border-bottom: 2px solid #efefef;
-                margin-bottom: 1rem;
+            padding-block-end: 1.2rem;
+            justify-items: flex-start;
+
+            >div {
+                border-bottom: 1px solid rgba(black, 0.87);
+                margin: 8px 0px;
+
+                @include bp(md) {
+                    border: 0;
+                }
+
+                &:first-child {
+                    justify-content: flex-start;
+                    text-align: left;
+                }
+
             }
- 
+        }
+
+        .items {
+            color: rgba(black, 0.87);
+            font-size: 14px;
+            font-weight: 200;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.71;
+            letter-spacing: 0.08px;
+            padding-block-end: 1.2rem;
+
             .list-container {
                 margin-bottom: 1rem;
             }
-    
+
             label {
                 justify-self: left;
             }
-    
-            .product {
-                grid-column: 1 / 2;
-                border-bottom: rgba(black, 0.87);
-                border-width: 1px;
-                margin: 8px 0px;
-                border-bottom-style:solid;
-                @include bp(md) {
-                    border-width:0;
-                }
-            }
-            
-    
+
             .total-container {
                 margin: inherit;
                 flex-direction: column;
@@ -75,7 +88,7 @@
                 justify-self: left;
             }
 
-            .quantity-container { 
+            .quantity-container {
                 background-color: white;
                 justify-content: center;
                 align-items: center;
@@ -109,7 +122,7 @@
                     width: 100%;
                     max-width: 30px;
                     font-size: 14px;
-                    --font-weight: 200;
+                    font-weight: 200;
                 }
 
                 button {
@@ -139,9 +152,10 @@
                 cursor: pointer;
             }
         }
+
         .grid {
             display: grid;
-            gap: $grid-gap; 
+            gap: $grid-gap;
             justify-items: center;
             grid-template-columns: 2.8fr 0fr;
 
@@ -157,14 +171,14 @@
             margin-block-start: 2rem;
             color: rgba(black, 0.87);
             font-size: 14px;
-            --font-weight: 200;
+            font-weight: 200;
             font-stretch: normal;
             font-style: normal;
             line-height: 1.71;
             letter-spacing: 0.08px;
-            margin-bottom:1rem;
+            margin-bottom: 1rem;
 
-            .grid { 
+            .grid {
                 justify-items: center;
                 grid-template-columns: 2.8fr 0fr;
 
@@ -173,11 +187,12 @@
                     grid-template-columns: 2.8fr 1fr 1fr 1fr 40px;
                     padding-block-end: 1.2rem;
                     justify-content: stretch;
+
                     .cost {
                         grid-area: cost;
 
                         &.total {
-                            --font-weight: 500;
+                            font-weight: 500;
                         }
                     }
 
@@ -186,7 +201,7 @@
                         grid-area: label;
 
                         &.total {
-                            --font-weight: 500;
+                            font-weight: 500;
                         }
                     }
                 }
@@ -195,19 +210,20 @@
                 .cost {
 
                     &.total {
-                        --font-weight: 500;
+                        font-weight: 500;
                     }
                 }
 
                 .label {
-                    justify-self: left;  
+                    justify-self: left;
+
                     &.total {
-                        --font-weight: 500;
+                        font-weight: 500;
                     }
                 }
             }
         }
- 
+
         .cta-container {
             display: flex;
             justify-content: flex-end;
@@ -224,18 +240,19 @@
             }
         }
     }
+
     .buynow {
         align-self: flex-end;
         margin: 2em 10px;
     }
 }
- 
+
 
 @include bp(md) {
 
     //desktop
     .checkout-section {
-         
+
 
         .buynow {
             margin: 30px 60px;
@@ -246,8 +263,7 @@
                 justify-self: right;
             }
 
-              
+
         }
     }
 }
- 

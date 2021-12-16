@@ -7,27 +7,22 @@ import heroThree from "../assets/images/desktop-hero@3x.jpg"
 
 
 export default function HeroImage() {
-
-  
-  
     return (
 
             <ResponsiveImage>
             <ResponsiveImageSize
                 default
                 minWidth={0}
-                path={'../assets/images/desktop-hero.jpg'}
+                path={heroOne}
             />
             <ResponsiveImageSize
                 minWidth={768}
-                path={'../assets/images/desktop-hero@2x.jpg'}
+                path={heroTwo}
             />
             <ResponsiveImageSize
                 minWidth={1100}
-                path={'../assets/images/desktop-hero@3x.jpg'}
+                path={heroThree}
             />
             </ResponsiveImage> 
-
     );
-
 }

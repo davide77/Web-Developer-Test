@@ -33,7 +33,7 @@ class Main extends Component {
       <section className="home-section article full-bleed has-bg-light-grey">
         <div className="container flow ">
               <header className="col-12">
-                  <h2 className="section__title">Innovation and experience design agency.</h2>
+                  <h3 className="section__title">Innovation and experience design agency.</h3>
                   <p className="section_paragraph">Apps is an innovation and experience design agency.<br/> We exist to create a better future with you.</p>
               <button className="button primary">Products</button>
               </header>
