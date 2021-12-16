@@ -58,8 +58,6 @@
         .wrap {
             width: 100%;
         }
-
-        header {}
     }
 
 
@@ -98,9 +96,16 @@
         flex-direction: column-reverse;
         gap: 1em;
         position: relative;
+        grid-template-areas: "content picture";
+        
+        grid-template-rows: 1fr 1fr;
+        overflow: hidden;
 
         @include bp(md) {
-            flex-direction: row
+            grid-template-areas: "picture content";
+            grid-template-columns: 1fr 1fr;
+            flex-direction: row;
+            gap: 0;
         }
 
         header {
@@ -134,16 +139,6 @@
             }
         }
 
-        header,
-        picture {
-            // width: 100%;
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
-            // @include bp(lg) {
-            //     width: 50%;
-            // }
-        }
     }
 
 
