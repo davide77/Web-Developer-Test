@@ -21,6 +21,7 @@
     position: relative;
     height: 50vh;
     display: flex;
+    overflow: hidden;
 
     @include bp(lg) {
         height: 80vh;
@@ -72,14 +73,14 @@
 }
 
 .home-section {
-    padding: var(--section-spacing) 0;
+    //padding: var(--section-spacing) 0;
 
     &.article {
 
         header {
             margin: auto;
             text-align: center;
-            padding-inline: 18px;
+            padding: var(--section-spacing) 18px;
 
             .button {
                 display: block;
