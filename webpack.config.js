@@ -20,7 +20,8 @@ const config = {
     devtool: "eval-cheap-source-map",
     devServer: {
         port: 9000,
-        contentBase: path.resolve(__dirname, "public"),
+        historyApiFallback: true,
+        contentBase: './',
         hot: true
     },
     module: {
